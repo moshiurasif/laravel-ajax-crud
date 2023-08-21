@@ -14,9 +14,10 @@
   </head>
   <body>
    <div class="container">
+    <h2 class="text-center my-3">Laravel Ajax Crud Operation</h2>
     <div class="row">
         <div class="col-md-8 m-auto">
-            <h2 class="text-center my-3">Laravel Ajax Crud Operation</h2>
+            <a class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#addModal" href="">Add Product</a>
             <table class="table table-striped">
                 <thead>
                   <tr>
@@ -32,8 +33,8 @@
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>
-                        <a class="btn btn-success" href=""><i class="las la-edit"></i></a>
-                        <a class="btn btn-danger" href=""><i class="las la-trash"></i></a>
+                        <a class="btn btn-success shadow-none" href=""><i class="las la-edit"></i></a>
+                        <a class="btn btn-danger shadow-none" href=""><i class="las la-trash"></i></a>
                     </td>
                   </tr>
                  
@@ -43,7 +44,7 @@
     </div>
    </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+   @include('product_modal');
    @include('products_js');
 
   </body>
