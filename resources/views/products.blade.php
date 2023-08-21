@@ -18,6 +18,8 @@
     <div class="row">
         <div class="col-md-8 m-auto">
             <a class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#addModal" href="">Add Product</a>
+
+            <div class="alert-success" id="success"></div>
             <table class="table table-striped">
                 <thead>
                   <tr>
@@ -28,18 +30,21 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach($products as $key => $data)
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                    <th scope="row">{{$key+1}}</th>
+                    <td>{{$data->name}}</td>
+                    <td>{{$data->price}}</td>
                     <td>
                         <a class="btn btn-success shadow-none" href=""><i class="las la-edit"></i></a>
                         <a class="btn btn-danger shadow-none" href=""><i class="las la-trash"></i></a>
                     </td>
                   </tr>
+                  @endforeach
                  
                 </tbody>
               </table>
+              {{$products->links()}}
         </div>
     </div>
    </div>

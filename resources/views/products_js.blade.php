@@ -21,7 +21,12 @@ headers: {
             method: 'post',
             data: {name:name, price:price},
             success: function (res) {
-
+                if (res.status == 'success') {
+                   $('#addModal').modal('hide'); 
+                   $('#addProductForm')[0].reset();
+                   $('#success').text('Product Added Successfully');
+                   $('.table').load(location.href + ' .table');
+                }
             },
             error: function(err){
                 let error = err.responseJSON;
