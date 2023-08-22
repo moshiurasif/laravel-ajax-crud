@@ -36,7 +36,15 @@
                     <td>{{$data->name}}</td>
                     <td>{{$data->price}}</td>
                     <td>
-                        <a class="btn btn-success shadow-none" href=""><i class="las la-edit"></i></a>
+                        <a class="btn btn-success shadow-none update-form-button" href=""
+                        data-bs-toggle="modal" data-bs-target="#updateModal"
+                        data-id = {{$data->id}}
+                        data-name = {{$data->name}}
+                        data-price = {{$data->price}}
+
+                        >
+                          <i class="las la-edit"></i>
+                        </a>
                         <a class="btn btn-danger shadow-none" href=""><i class="las la-trash"></i></a>
                     </td>
                   </tr>
@@ -50,6 +58,7 @@
    </div>
 
    @include('product_modal');
+   @include('update_modal');
    @include('products_js');
 
   </body>

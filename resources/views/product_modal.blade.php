@@ -1,7 +1,7 @@
 
   <!-- Modal -->
   <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addProductModal" aria-hidden="true">
-    <form action="{{url('/add-product')}}" method="post" id="addProductForm">
+    <form action="" method="post" id="addProductForm">
         @csrf
         <div class="modal-dialog">
             <div class="modal-content">
