@@ -21,6 +21,7 @@
             <a class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#addModal" href="">Add Product</a>
 
             {{-- <div class="alert-success" id="success"></div> --}}
+            <input type="text" name="search" id="search" placeholder="Search here..." class="form-control my-3">
             <div class="table_data">
               <table class="table table-striped">
                 <thead>

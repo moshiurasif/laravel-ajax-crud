@@ -10,3 +10,4 @@ Route::post('/update-product', [ProductController::class, 'updateProduct'])->nam
 
 Route::post('/delete-product', [ProductController::class, 'deleteProduct'])->name('delete.product');
 Route::get('/pagination/paginate-data', [ProductController::class, 'pagination']);
+Route::get('/search-product', [ProductController::class, 'searchProduct'])->name('search.product');
