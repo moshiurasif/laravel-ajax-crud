@@ -152,7 +152,7 @@ headers: {
                     "onclick": null,
                     "showDuration": "300",
                     "hideDuration": "1000",
-                    "timeOut": "5000",
+                    "timeOut": "300",
                     "extendedTimeOut": "1000",
                     "showEasing": "swing",
                     "hideEasing": "linear",
@@ -167,6 +167,21 @@ headers: {
         
         
        })
+    //    pagination
+       $(document).on('click', '.pagination a', function(e){
+        e.preventDefault();
+        let page = $(this).attr('href').split('page=')[1]
+        product(page)
+       })
+
+       function product(page){
+        $.ajax({
+            url: "/pagination/paginate-data?page="+page,
+            success: function(res){
+                $('.table_data').html(res)
+            }
+        })
+       }
 
 })
 </script>

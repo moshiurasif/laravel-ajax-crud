@@ -21,7 +21,8 @@
             <a class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#addModal" href="">Add Product</a>
 
             {{-- <div class="alert-success" id="success"></div> --}}
-            <table class="table table-striped">
+            <div class="table_data">
+              <table class="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col">SL. No.</th>
@@ -55,6 +56,7 @@
                 </tbody>
               </table>
               {{$products->links()}}
+            </div>
         </div>
     </div>
    </div>
