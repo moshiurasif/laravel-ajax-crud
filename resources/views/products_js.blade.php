@@ -1,6 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 
 <script>
     
@@ -27,11 +28,30 @@ headers: {
                 if (res.status == 'success') {
                    $('#addModal').modal('hide'); 
                    $('#addProductForm')[0].reset();
-                   $('#success').text('Product Added Successfully');
-                    setTimeout(() => {
-                        $('#success').text('');
-                    }, 2000);
+                //    $('#success').text('Product Added Successfully');
+                //     setTimeout(() => {
+                //         $('#success').text('');
+                //     }, 2000);
                    $('.table').load(location.href + ' .table');
+                   Command: toastr["success"]("Product Added Successfully", "Success")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
                 }
             },
             error: function(err){
@@ -68,11 +88,30 @@ headers: {
                 if (res.status == 'success') {
                    $('#updateModal').modal('hide'); 
                    $('#updateProductForm')[0].reset();
-                   $('#success').text('Product Updated Successfully');
-                    setTimeout(() => {
-                        $('#success').text('');
-                    }, 2000);
+                //    $('#success').text('Product Updated Successfully');
+                //     setTimeout(() => {
+                //         $('#success').text('');
+                //     }, 2000);
                    $('.table').load(location.href + ' .table');
+                   Command: toastr["success"]("Product Updated Successfully", "Success")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
                 }
             },
             error: function(err){
@@ -96,11 +135,30 @@ headers: {
             success: function (res) {
                 if (res.status == 'success') {
                   
-                   $('#success').text('Product Deleted Successfully');
-                    setTimeout(() => {
-                        $('#success').text('');
-                    }, 2000);
+                //    $('#success').text('Product Deleted Successfully');
+                //     setTimeout(() => {
+                //         $('#success').text('');
+                //     }, 2000);
                    $('.table').load(location.href + ' .table');
+                   Command: toastr["success"]("Product Deleted Successfully", "Success")
+
+                    toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
                 }
             }
            
