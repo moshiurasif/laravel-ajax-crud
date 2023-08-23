@@ -83,6 +83,32 @@ headers: {
             }
         })
        })
+       // delete product
+       $(document).on('click', '.delete_product', function(e){
+        e.preventDefault();
+        let product_id = $(this).data('id');
+
+        if(confirm('Are you sure to delete product')){
+            $.ajax({
+            url:"{{route('delete.product')}}",
+            method: "post",
+            data: {product_id: product_id},
+            success: function (res) {
+                if (res.status == 'success') {
+                  
+                   $('#success').text('Product Deleted Successfully');
+                    setTimeout(() => {
+                        $('#success').text('');
+                    }, 2000);
+                   $('.table').load(location.href + ' .table');
+                }
+            }
+           
+        })
+        }
+        
+        
+       })
 
 })
 </script>

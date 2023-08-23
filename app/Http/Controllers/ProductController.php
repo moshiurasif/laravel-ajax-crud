@@ -40,32 +40,33 @@ class ProductController extends Controller
     // update product
     public function updateProduct(Request $request)
     {
-        try {
-            $request->validate(
-                [
-                    'up_name' => 'required|unique:products,name,' . $request->up_id,
-                    'up_price' => 'required',
-                ],
-                [
-                    'up_name.required' => 'Name field is Required',
-                    'up_name.unique' => 'Product Already Exists',
-                    'up_price.required' => 'Price field is Required'
-                ]
-            );
 
-            Product::where('id', $request->up_id)->update([
-                'name' => $request->up_name,
-                'price' => $request->up_price,
-            ]);
-            return response()->json([
-                'status' => 'success'
-            ]);
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-            return response()->json([
-                'status' => 'error',
-                'message' => 'An error occurred during product update.'
-            ], 500);
-        }
+        $request->validate(
+            [
+                'up_name' => 'required|unique:products,name,' . $request->up_id,
+                'up_price' => 'required',
+            ],
+            [
+                'up_name.required' => 'Name field is Required',
+                'up_name.unique' => 'Product Already Exists',
+                'up_price.required' => 'Price field is Required'
+            ]
+        );
+
+        Product::where('id', $request->up_id)->update([
+            'name' => $request->up_name,
+            'price' => $request->up_price,
+        ]);
+        return response()->json([
+            'status' => 'success'
+        ]);
+    }
+
+    public function deleteProduct(Request $request)
+    {
+        Product::find($request->product_id)->delete();
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 }
